@@ -1,0 +1,8 @@
+# SBT generated files
+target/
+
+# Java/Scala compilation files
+*.class
+
+# Project files
+.idea/
