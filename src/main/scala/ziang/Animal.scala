@@ -17,6 +17,7 @@ class Animal(protected var name: String, protected var sound: String) extends Cr
 
   // Getters
   def getName: String = name
+
   def getSound: String = sound
 
   // Setters
@@ -27,20 +28,24 @@ class Animal(protected var name: String, protected var sound: String) extends Cr
       this.name = name
     }
   }
+
   def setSound(sound: String): Unit = this.sound = sound
 
   override def toString: String = s"${this.name} with id ${this.id} says ${this.sound}"
+
 }
 
 // Companion object
 // 专门存放静态变量/方法
 object Animal {
+
   private var idNum: Int = 0
 
   private def newIdNum(): Int = {
     idNum += 1
     idNum
   }
+
 }
 
 // Inheritance from a concrete class
@@ -50,9 +55,11 @@ class Dog(name: String, sound: String, private val growl: String) extends Animal
   def this(name: String) = {
     this(name, "No Sound", "No Growl")
   }
+
   def this(name: String, sound: String) = {
     this(name, sound, "No Growl")
   }
 
   override def toString: String = s"${this.name} with id ${this.id} says ${this.sound} or ${this.growl}"
+
 }
